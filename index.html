@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VRCafe Todo App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="img/logo.webp" alt="VRCafe Logo" class="logo" />
+    <h1>VRCafe Todo App</h1>
+  </header>
+
+  <main>
+    <section class="task-input">
+      <input type="text" id="taskInput" placeholder="Nieuwe taak toevoegen..." />
+      <select id="categorySelect">
+        <option value="Werk">Werk</option>
+        <option value="Persoonlijk">Persoonlijk</option>
+        <option value="Vrije tijd">Vrije tijd</option>
+      </select>
+      <button onclick="addTask()">Voeg toe</button>
+    </section>
+
+    <section class="categories">
+      <div class="category" id="Werk">
+        <h2>Werk</h2>
+        <ul class="task-list"></ul>
+      </div>
+      <div class="category" id="Persoonlijk">
+        <h2>Persoonlijk</h2>
+        <ul class="task-list"></ul>
+      </div>
+      <div class="category" id="Vrije tijd">
+        <h2>Vrije tijd</h2>
+        <ul class="task-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 VRCafe Ryan Schorel</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

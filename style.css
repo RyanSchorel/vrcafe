@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #1e1921;
+  color: #fff;
+  font-weight: 700; 
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #67008e;
+}
+
+.logo {
+  height: 70px;
+  margin-right: 1rem;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #1ef3ab;
+  font-weight: 700;
+}
+
+main {
+  padding: 1rem;
+}
+
+.task-input {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.task-input input,
+.task-input select {
+  padding: 0.5rem;
+  flex: 1;
+  min-width: 200px;
+  font-weight: 700;
+}
+
+.task-input button {
+  padding: 0.5rem 1rem;
+  background: #1ef3ab;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-around;
+}
+
+.category {
+  flex: 1;
+  min-width: 250px;
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.category h2 {
+  border-bottom: 1px solid #1ef3ab;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-weight: 700;
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-list button {
+  background: none;
+  border: none;
+  color: #1ef3ab;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  background-color: #333;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .categories {
+    flex-direction: column;
+  }
+
+  .task-input {
+    flex-direction: column;
+  }
+}
