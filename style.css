@@ -107,6 +107,17 @@ footer {
   font-weight: 700;
 }
 
+.ryanschorel {
+  color: inherit; 
+  text-decoration: none; 
+  cursor: pointer;
+}
+
+.ryanschorel:hover {
+  color: #1ef3ab; 
+}
+
+
 @media (max-width: 768px) {
   .categories {
     flex-direction: column;
