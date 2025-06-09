@@ -86,7 +86,8 @@ main {
 }
 
 .task-list li.completed {
-  text-decoration: line-through;
+  text-decoration: line-through rgb(195, 39, 39);
+  text-decoration-thickness: 0.2rem;
   color: gray;
 }
 

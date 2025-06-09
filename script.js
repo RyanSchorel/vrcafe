@@ -16,26 +16,32 @@ function addTask() {
   if (task === "") return;
 
   const tasks = getTasks();
-  tasks.push({ text: task, category, completed: false });
+  tasks.push({ id: Date.now(), text: task, category, completed: false });
   saveTasks(tasks);
   input.value = "";
   renderTasks();
 }
 
 function renderTasks() {
-  const categories = ["Werk", "Persoonlijk", "Vrije tijd"];
+  const categories = ["Werk", "Persoonlijk", "VrijeTijd"]; 
+  const allTasks = getTasks();
+
   categories.forEach(cat => {
     const list = document.querySelector(`#${cat} .task-list`);
+    if (!list) return; 
+
     list.innerHTML = "";
-    const tasks = getTasks().filter(t => t.category === cat);
-    tasks.forEach((task, index) => {
+
+    const tasks = allTasks.filter(t => t.category === cat);
+
+    tasks.forEach(task => {
       const li = document.createElement("li");
       li.className = task.completed ? "completed" : "";
       li.innerHTML = `
         <span>${task.text}</span>
         <div>
-          <button onclick="toggleComplete(${index})">✔️</button>
-          <button onclick="deleteTask(${index})">🗑️</button>
+          <button onclick="toggleComplete(${task.id})">✔️</button>
+          <button onclick="deleteTask(${task.id})">🗑️</button>
         </div>
       `;
       list.appendChild(li);
@@ -43,16 +49,19 @@ function renderTasks() {
   });
 }
 
-function toggleComplete(index) {
+function toggleComplete(id) {
   const tasks = getTasks();
-  tasks[index].completed = !tasks[index].completed;
-  saveTasks(tasks);
-  renderTasks();
+  const task = tasks.find(t => t.id === id);
+  if (task) {
+    task.completed = !task.completed;
+    saveTasks(tasks);
+    renderTasks();
+  }
 }
 
-function deleteTask(index) {
-  const tasks = getTasks();
-  tasks.splice(index, 1);
+function deleteTask(id) {
+  let tasks = getTasks();
+  tasks = tasks.filter(t => t.id !== id);
   saveTasks(tasks);
   renderTasks();
 }

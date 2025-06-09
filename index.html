@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>VRCafe Todo App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header>
-    <img src="img/logo.webp" alt="VRCafe Logo" class="logo" />
+    <a href="https://ryanschorel.nl/">
+      <img src="img/logo.webp" alt="VRCafe Logo" class="logo">
+    </a>
     <h1>VRCafe Todo App</h1>
   </header>
 
@@ -18,7 +22,7 @@
       <select id="categorySelect">
         <option value="Werk">Werk</option>
         <option value="Persoonlijk">Persoonlijk</option>
-        <option value="Vrije tijd">Vrije tijd</option>
+        <option value="VrijeTijd">Vrije tijd</option>
       </select>
       <button onclick="addTask()">Voeg toe</button>
     </section>
@@ -32,7 +36,7 @@
         <h2>Persoonlijk</h2>
         <ul class="task-list"></ul>
       </div>
-      <div class="category" id="Vrije tijd">
+      <div id="VrijeTijd" class="category">
         <h2>Vrije tijd</h2>
         <ul class="task-list"></ul>
       </div>
@@ -40,9 +44,10 @@
   </main>
 
   <footer>
-    <p>© 2025 VRCafe Ryan Schorel</p>
+    <p>© 2025 VRCafe - Ryan Schorel</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
